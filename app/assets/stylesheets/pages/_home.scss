@@ -1,1 +1,88 @@
 // Specific CSS for your home-page
+body {
+  background-color: #fffdf0;
+}
+
+.logo-location {
+  position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content:left;
+    align-items:flex-start;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+	font-size: 1.6rem;
+	font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
+	font-weight: 500;
+	margin: 0;
+	padding: 0;
+	color: #d1743a;
+}
+
+.container {
+	width: 75vw;
+	margin: 0 auto;
+}
+
+.card {
+	width: 60%;
+	height: 200px;
+	margin: 30vh auto;
+	padding: 2rem 0;
+	box-shadow: 4px 4px 1rem hsla(0,0%,0%, .2);
+	position: relative;
+}
+
+.blender {
+	width: 100%;
+	height: 60%;
+	background-color: #fff;
+	position: absolute;
+	top: 20%;
+	right: 0;
+	z-index: 1;
+	animation: blenderShrink 4s infinite alternate both ease-in-out;
+}
+
+.card p {
+	min-width: 100%;
+	text-align: center;
+	display: none;
+	position: absolute;
+	top: 35%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 700;
+	font-size: 3vw;
+}
+
+@keyframes blenderShrink {
+	0% {
+		width: 100%;
+	}
+
+	100% {
+		width: 0%;
+	}
+}
+
+.author {
+	text-align: right;
+	margin-top: -10vh;
+	color: #757575;
+	font-weight: 600;
+}

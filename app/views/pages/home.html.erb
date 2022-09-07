@@ -1,2 +1,16 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+
+<div class="container" data-controller="logo-animation">
+<%= link_to users_path(@users) do %>
+	<div class="card">
+		<div class="blender"></div>
+		<p>Welcome to Local Jam!</p>
+		<p>Time to meet some cool musicians!</p>
+    <p>Click here!</p>
+		<p>&#10084;</p>
+	</div>
+  <% end %>
+</div>
+
+<div class="logo-location">
+<%= image_tag "logo.png"%>
+</div>
