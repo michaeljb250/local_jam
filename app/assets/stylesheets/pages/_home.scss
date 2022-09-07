@@ -12,9 +12,9 @@ body {
     align-items:flex-start;
 }
 
-html {
-	font-size: 62.5%;
-}
+// html {
+// 	font-size: 62.5%;
+// }
 
 *,
 *::before,
@@ -22,7 +22,7 @@ html {
 	box-sizing: border-box;
 }
 
-body {
+.body1 {
 	font-size: 1.6rem;
 	font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
 	font-weight: 500;
@@ -31,12 +31,12 @@ body {
 	color: #d1743a;
 }
 
-.container {
+.container1 {
 	width: 75vw;
 	margin: 0 auto;
 }
 
-.card {
+.card1 {
 	width: 60%;
 	height: 200px;
 	margin: 30vh auto;
@@ -56,7 +56,7 @@ body {
 	animation: blenderShrink 4s infinite alternate both ease-in-out;
 }
 
-.card p {
+.card1 p {
 	min-width: 100%;
 	text-align: center;
 	display: none;
