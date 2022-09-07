@@ -5,6 +5,10 @@ class UsersController < ApplicationController
     @users = User.where.not(id: current_user.id)
   end
 
+  def show
+    @dungeon = User.find(params[:id])
+  end
+
   def follow
     if current_user.follow(@user.id)
       respond_to do |format|
