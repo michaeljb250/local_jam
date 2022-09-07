@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @dungeon = User.find(params[:id])
+    @users = User.find(params[:id])
   end
 
   def follow
