@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @users = User.find(params[:id])
+    @user = User.find(params[:id])
   end
 
   def follow
@@ -32,6 +32,9 @@ class UsersController < ApplicationController
   def set_user
     @user = User.find(params[:id])
   end
+end
+def profile
+   @user = current_user
 end
 
 def user_params
