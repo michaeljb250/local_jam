@@ -10,9 +10,9 @@
         <div class="card">
             <div class="face face1">
                 <div class="content">
-                    <%# if dungeon.photo.attached? %>
-                    <%#= cl_image_tag dungeon.photo.key%>
-                    <%# end %>
+                    <% if user.photo.attached? %>
+                    <%= cl_image_tag user.photo.key%>
+                    <% end %>
                     <h3 id="cardtitle"><%= user.first_name %></h3>
                 </div>
             </div>
