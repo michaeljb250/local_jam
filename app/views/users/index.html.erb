@@ -1,4 +1,29 @@
-<h1>Users:</h1>
-<ul>
-  <%= render @users %>
-</ul>
+
+<div class="banner" >
+  <div class="banner">
+    </div>
+  </div>
+  </div>
+
+  <div class="container">
+      <% @users.each do |user| %>
+        <div class="card">
+            <div class="face face1">
+                <div class="content">
+                    <%# if dungeon.photo.attached? %>
+                    <%#= cl_image_tag dungeon.photo.key%>
+                    <%# end %>
+                    <h3 id="cardtitle"><%= user.first_name %></h3>
+                </div>
+            </div>
+            <div class="face face2">
+                <div class="content">
+                    <p class = "price"> <%= user.instrument%></p>
+                       <p class = "desc"></p>
+                       <p class = "artist_name"><%= user.artist_name %> </p>
+                       <%= link_to "Read More" , user_path(user), class: "cardbutton" %>
+                </div>
+            </div>
+        </div>
+      <% end %>
+    </div>
