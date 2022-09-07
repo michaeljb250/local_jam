@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @users = User.find(params[:id])
+    @user = User.find(params[:id])
   end
 
   def follow
@@ -15,6 +15,8 @@ class UsersController < ApplicationController
         format.html { redirect_to users_path }
         format.js
       end
+    else
+      redirect_to root_path
     end
   end
 
