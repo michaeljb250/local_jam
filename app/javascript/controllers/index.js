@@ -9,3 +9,6 @@ application.register("hello", HelloController)
 
 import LogoAnimationController from "./logo_animation_controller"
 application.register("logo-animation", LogoAnimationController)
+
+import MapController from "./map_controller"
+application.register("map", MapController)
