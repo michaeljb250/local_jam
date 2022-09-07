@@ -1,3 +1,11 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
-<p><%=  @user.first_name%></p>
+
+<div class="textotexto">
+<%= @user.first_name.capitalize%>
+</div>
+<div class="textotextoto">
+<p>Plays the <%=@user.instrument%></p>
+</div>
+<div class="textotextototo">
+<p>Bio: <%=@user.bio%></p>
+</div>
+  <%= render @user  %>

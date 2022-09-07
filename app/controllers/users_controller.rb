@@ -15,6 +15,8 @@ class UsersController < ApplicationController
         format.html { redirect_to users_path }
         format.js
       end
+    else
+      redirect_to root_path
     end
   end
 
