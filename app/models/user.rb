@@ -8,7 +8,8 @@ class User < ApplicationRecord
   has_one_attached :photo
   has_many :following_relationships, foreign_key: :follower_id, class_name: 'Follow'
   has_many :following, through: :following_relationships, source: :following
-  has_many :reviews
+  has_many :reviewers, foreign_key: :reviewer_id, class_name: 'Review'
+  has_many :reviewees, foreign_key: :reviewee_id, class_name: 'Review'
   has_many :follows
   has_many :user_groups
   has_many :groups, through: :user_groups
@@ -31,4 +32,4 @@ class User < ApplicationRecord
     relationship = Follow.find_by(follower_id: id, following_id: user_id)
     return true if relationship
   end
-        end
+end
