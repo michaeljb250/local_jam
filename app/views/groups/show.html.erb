@@ -1,2 +1,12 @@
 <h1>Groups#show</h1>
 <p>Find me in app/views/groups/show.html.erb</p>
+<ul>
+<% @group.users.each do |user|%>
+<li><%= user.first_name %></li>
+<% end %>
+</ul>
+<%= simple_form_for [@group, @user_group] do |f| %>
+<%= f.association :user, collection: User.where.not(id: current_user.id).pluck(:id, :first_name), label_method: :second, value_method: :first %>
+  <%= f.button :submit, class: "btn-primary" %>
+<% end %>
+<%= link_to "groups", groups_path, class: "btn-outline-secondary"  %>
