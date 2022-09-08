@@ -12,7 +12,7 @@ nigel = User.create!(
   first_name: "Tom",
   last_name: "Jones",
   artist_name: "lil_jonesy",
-  address: "10 downing street",
+  address: "10 downing street, London, UK",
   instrument: "xylophone",
   bio: "hey hey, music is cool"
   )
@@ -23,7 +23,7 @@ nigel = User.create!(
     first_name: "pietro",
     last_name: "sandwich",
     artist_name: "lil_cup",
-    address: "1 london road",
+    address: "1 london road, London, UK",
     instrument: "maracas",
     bio: "Hi guys, I'm looking for a buddy to jam with sometime! Preferably a pianist, so get in touch!"
   )
@@ -36,7 +36,7 @@ nigel = User.create!(
       first_name: "beed",
       last_name: "barnard",
       artist_name: "lil_beedy",
-      address: "11 langale drive",
+      address: "11 langale drive, UK",
       instrument: "xylophone",
       bio: "Just want to play some funky tunes "
     )
