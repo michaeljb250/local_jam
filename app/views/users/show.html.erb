@@ -9,3 +9,6 @@
 <p>Bio: <%=@user.bio%></p>
 </div>
   <%= render @user  %>
+<div class="imageimageSHE">
+  <%= cl_image_tag @user.photo.key%>
+</div>
