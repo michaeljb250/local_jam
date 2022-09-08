@@ -9,7 +9,7 @@ Rails.application.routes.draw do
       post :follow
       post :unfollow
     end
-    resources :reviews, only: [ :new, :create ]
+    resources :reviews, only: [:new, :create]
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   # Defines the root path route ("/")
