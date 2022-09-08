@@ -1,8 +1,6 @@
 class GroupsController < ApplicationController
-  def create
-  end
-
   def index
+    @groups = Group.all
   end
 
   def update
@@ -12,11 +10,30 @@ class GroupsController < ApplicationController
   end
 
   def show
+    @group = Group.find(params[:id])
+    @user_group = UserGroup.new
   end
 
   def edit
   end
 
   def new
+  @group = Group.new
+  end
+def add_user
+group = Group.find(params[:id])
+contact = User.find(params[:user_id])
+UserGroups.create(user: contact, group: group)
+end
+
+def create
+  @group = Group.new(group_params)
+  @group.save!
+  #  redirect_to group_path(@group)
+  end
+
+  private
+  def group_params
+    params.require(:group).permit(:name)
   end
 end

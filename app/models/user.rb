@@ -10,6 +10,7 @@ class User < ApplicationRecord
   has_many :following, through: :following_relationships, source: :following
   has_many :reviews
   has_many :follows
+  has_many :user_groups
   has_many :groups, through: :user_groups
   validates :first_name, presence: true
   validates :last_name, presence: true
