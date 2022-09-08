@@ -5,7 +5,7 @@ export default class extends Controller {
   connect() {
     function showSlides() {
 
-      let pS = document.querySelectorAll("p");
+      let pS = document.querySelectorAll("h5");
       for (let i = 0; i < pS.length; i++) {
           pS[i].style.display = "none";
       }
