@@ -1,6 +1,6 @@
 class UserGroupsController < ApplicationController
   def create
-   @group = Group.find(params [:group_id])
+   @group = Group.find(params[:group_id])
    @user = User.find(params[:user_group][:user_id])
    @user_group = UserGroup.new
    @user_group.group = @group
@@ -10,4 +10,5 @@ class UserGroupsController < ApplicationController
    else
     render "groups/show", status: :unprocessable_entity
   end
+end
 end
