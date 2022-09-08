@@ -1,14 +1,21 @@
 
-<div class="textotexto">
-<%= @user.first_name.capitalize%>
+<div class = "userbanner">
+<%= cl_image_tag @user.photo.key,:width=> 500, :height => 350 %>
 </div>
-<div class="textotextoto">
-<p>Plays the <%=@user.instrument%></p>
+<div class="nametitle">
+<%= @user.first_name.capitalize%> <%= render @user %>
 </div>
-<div class="textotextototo">
+<div class="icon">
+ <%= image_tag "accoustic.png", :width => 60, :height => 60  %>
+</div>
+<div>
+<div class="bio">
 <p>Bio: <%=@user.bio%></p>
 </div>
-  <%= render @user  %>
-<div class="imageimageSHE">
-  <%= cl_image_tag @user.photo.key%>
+<div class="showimage">
+  <%= cl_image_tag @user.photo.key, :width=>170, :height=> 170, :crop => :fill, :radius => 130%>
 </div>
+<div style="width: 100%; height: 600px;"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
