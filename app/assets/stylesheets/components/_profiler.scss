@@ -1,25 +1,62 @@
-.textotexto {
+.nametitle {
      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  font-size: 100px;
+  font-size: 70px;
   color: #d1743a;
+position: absolute;
+ top: 230px;
 
 }
 
-.textotextoto {
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-font-size: 50px;
-color: #5b3d2a;
-
+.icon {
+  border-image: url(accoustic.png);
+ position: absolute;
+ top: 315px
 }
 
-.textotextototo {
+.bio {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 font-size: 28px;
 color: #5b3d2a;
-
+ position: absolute;
+ top: 430px;
 }
 
-.imageimageSHE {
-  display: flex;
-  align-items: flex-end;
+.showimage {
+ position: absolute;
+ top: 115px;
+ left: 150px;
+ border-radius: 100px !important;
+border: 3px solid #d1743a;
+img{
+  border-radius: 100px !important;
+}
+}
+
+.followposition{
+  position: absolute;
+   top: 142px;
+  left: 430px;
+  font-size: 20px !important;
+  border: 7px solid #d1743a !important;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  background-color: #d1743a;
+  list-style-type: none;
+  border-radius: 45%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.userbanner{
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+}
+
+.vidwrapper{
+  width: 100%; max-width: 500px;
+}
+.vidcontainer{
+max-width: 100%; height: 0%;
+
 }
