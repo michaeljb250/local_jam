@@ -2,6 +2,10 @@
 <div class = "userbanner">
 <%= cl_image_tag @user.photo.key,:width=> 500, :height => 350 %>
 </div>
+<div class="vidwrapper">
+<div class ="vidcontianer">
+ </div>
+  </div>
 <div class="nametitle">
 <%= @user.first_name.capitalize%> <%= render @user %>
 </div>
@@ -15,7 +19,86 @@
 <div class="showimage">
   <%= cl_image_tag @user.photo.key, :width=>170, :height=> 170, :crop => :fill, :radius => 130%>
 </div>
-<div style="width: 100%; height: 600px;"
-  data-controller="map"
-  data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+  Launch static backdrop modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+         <% @user.followers.each do |user| %>
+         <div class="containerfollow">
+
+            <div class="card p-3">
+
+                <div class="d-flex align-items-center">
+
+                    <div class="image">
+                 <%= cl_image_tag user.photo.key%>
+                </div>
+
+                <div class="ml-3 w-100">
+
+                   <h4 class="mb-0 mt-0"><%=user.first_name %></h4>
+                   <span> <%=user.instrument %></span>
+
+                   <div class="p-2 mt-2 bg-primary d-flex justify-content-between rounded text-white stats">
+
+                    <div class="d-flex flex-column">
+
+                        <span class="articles">Articles</span>
+                        <span class="number1">38</span>
+
+                    </div>
+
+                    <div class="d-flex flex-column">
+
+                        <span class="followers">Followers</span>
+                        <span class="number2">980</span>
+
+                    </div>
+
+
+                    <div class="d-flex flex-column">
+
+                        <span class="rating"> <%  %></span>
+                        <span class="number3">8.9</span>
+
+                    </div>
+
+                   </div>
+
+
+                   <div class="button mt-2 d-flex flex-row align-items-center">
+
+                    <button class="btn btn-sm btn-outline-primary w-100">Chat</button>
+                    <button class="btn btn-sm btn-primary w-100 ml-2">Follow</button>
+
+
+                   </div>
+
+
+                </div>
+
+
+                </div>
+
+            </div>
+            <% end %>
+         </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Understood</button>
+      </div>
+    </div>
+  </div>
+</div>
