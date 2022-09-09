@@ -6,37 +6,37 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-nigel = User.create!(
-  email: "nigel@gmail.com",
-  password: "bambam1",
-  first_name: "Tom",
-  last_name: "Jones",
-  artist_name: "lil_jonesy",
-  address: "10 downing street, London, UK",
-  instrument: "xylophone",
-  bio: "hey hey, music is cool"
-  )
+# nigel = User.create!(
+#   email: "nigel@gmail.com",
+#   password: "bambam1",
+#   first_name: "Tom",
+#   last_name: "Jones",
+#   artist_name: "lil_jonesy",
+#   address: "10 downing street, London, UK",
+#   instrument: "xylophone",
+#   bio: "hey hey, music is cool"
+#   )
 
-  jimothy = User.create!(
-    email: "jimothy@gmail.com",
-    password: "bambam1",
-    first_name: "pietro",
-    last_name: "sandwich",
-    artist_name: "lil_cup",
-    address: "1 london road, London, UK",
-    instrument: "maracas",
-    bio: "Hi guys, I'm looking for a buddy to jam with sometime! Preferably a pianist, so get in touch!"
-  )
+#   jimothy = User.create!(
+#     email: "jimothy@gmail.com",
+#     password: "bambam1",
+#     first_name: "pietro",
+#     last_name: "sandwich",
+#     artist_name: "lil_cup",
+#     address: "1 london road, London, UK",
+#     instrument: "maracas",
+#     bio: "Hi guys, I'm looking for a buddy to jam with sometime! Preferably a pianist, so get in touch!"
+#   )
 
 
 
-    beed = User.create!(
-      email: "beedbarnardo@gmail.com",
-      password: "bambam1",
-      first_name: "beed",
-      last_name: "barnard",
-      artist_name: "lil_beedy",
-      address: "11 langale drive, UK",
-      instrument: "xylophone",
-      bio: "Just want to play some funky tunes "
-    )
+#     beed = User.create!(
+#       email: "beedbarnardo@gmail.com",
+#       password: "bambam1",
+#       first_name: "beed",
+#       last_name: "barnard",
+#       artist_name: "lil_beedy",
+#       address: "11 langale drive, UK",
+#       instrument: "xylophone",
+#       bio: "Just want to play some funky tunes "
+#     )

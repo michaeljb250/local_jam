@@ -12,8 +12,14 @@ class GroupsController < ApplicationController
   def show
     @group = Group.find(params[:id])
     @user_group = UserGroup.new
+    @users = @group.users
+    @markers = @users.geocoded.map do |user|
+      {
+        lat: user.latitude,
+        lng: user.longitude
+      }
   end
-
+end
   def edit
   end
 
