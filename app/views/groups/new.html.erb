@@ -1,8 +1,9 @@
-<h1>Groups#new</h1>
-<p>Find me in app/views/groups/new.html.erb</p>
+<h1 class="connector">Groups#new</h1>
+<p class="newone">Could you guys be the next Coldplay!? Hopefully not.</p>
 <%= simple_form_for @group do |f| %>
   <%= f.input :name %>
-  <%= f.button :submit, class: "btn-primary" %>
-  <%= f.button :button, "Cancel", type: "reset", class: "btn-outline-secondary" %>
-<% end %>
-<%= link_to "groups", groups_path, class: "btn-outline-secondary"  %>
+  <%= f.button :submit, class: "connectoror" %>
+  <%= f.button :button, "Cancel", type: "reset", class: "connectoror" %>
+<% end %><br>
+<br>
+<%= link_to ">> back to groups", groups_path, class: "connectoror"  %>
