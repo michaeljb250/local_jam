@@ -1,23 +1,31 @@
 
-<div class = "userbanner">
-<%= cl_image_tag @user.photo.key,:width=> 500, :height => 350 %>
-</div>
-<div class="vidwrapper">
-<div class ="vidcontianer">
- </div>
+ <div class="containerpr">
+  <div class="cardpr">
+    <%= cl_image_tag(@user.photo.key, :class => "card__image") %>
+    <p class="card__name"><%= @user.first_name %></p>
+    <div class="grid-container">
+
+      <div class="grid-child-posts">
+        156 Post
+      </div>
+
+      <div class="grid-child-followers">
+        <%= @user.followers.count%>   followers
+      </div>
+
+    </div>
+    <ul class="social-icons">
+      <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+      <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+      <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+      <li><a href="#"><i class="fa fa-codepen"></i></a></li>
+    </ul>
+    <button class="btn draw-border"><%=render @user%></button>
+    <button class="btn draw-border">Message</button>
+
   </div>
-<div class="nametitle">
-<%= @user.first_name.capitalize%> <%= render @user %>
+<div class="fancy"> <p id= "biotext"> <%= @user.bio %> </p>
 </div>
-<div class="icon">
- <%= image_tag "accoustic.png", :width => 60, :height => 60  %>
-</div>
-<div>
-<div class="bio">
-<p>Bio: <%=@user.bio%></p>
-</div>
-<div class="showimage">
-  <%= cl_image_tag @user.photo.key, :width=>170, :height=> 170, :crop => :fill, :radius => 130%>
 </div>
 
 <!-- Button trigger modal -->
@@ -101,9 +109,4 @@
       </div>
     </div>
   </div>
-</div><br>
-<br>
-<%# <%= link_to "Leave Review", new_user_review_path(@user), class: "connectoror"  %>
-<%# <%= @user.reviews.each do |review| %>
-<%# <%= review.content %>
-<%# <% end %>
+</div>

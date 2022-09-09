@@ -3,40 +3,45 @@
   <div class="banner">
     </div>
   </div>
-  </div>
-<div class="search-bar" style="width: 800px;">
-  <%= form_with url: users_path, method: :get, class: "d-flex" do |form| %>
+</div>
+<div class="search-bar" style="width: 900px;" >
+  <%= form_with url: users_path, method: :get, class: "d-flex align-items-center" do |form| %>
     <%= text_field_tag :query,
       params[:query],
       class: "form-control",
       placeholder: "Find a jammer"
     %>
-    <%= form.select :address, User.select(:address).distinct %>
     <%= submit_tag "Search", class: "btn btn-primary" %>
   <% end %>
 </div>
-  <div class="container">
-      <% @users.each do |user| %>
-        <div class="card">
-            <div class="face face1">
-                <div class="content">
-                    <% if user.photo.attached? %>
-                    <%= cl_image_tag user.photo.key%>
-                    <% end %>
-                    <h3 id="cardtitle"><%= user.first_name %></h3>
-                </div>
-            </div>
-            <div class="face face2">
-                <div class="content">
-                    <p class = "price"> <%= user.instrument%></p>
-                       <p class = "desc"></p>
-                       <p class = "artist_name"><%= user.artist_name %> </p>
-                       <%= link_to "Read More" , user_path(user), class: "cardbutton" %>
-                </div>
-            </div>
-        </div>
-      <% end %>
+  <div class="card-wrapper">
+  <% @users.each do |user|  %>
+
+    <div class="card">
+
+      <div class="card-image">
+        <%= cl_image_tag user.photo.key%>
+      </div>
+
+      <ul class="social-icons">
+        <li>
+           <%=   link_to user_path(user) do %>
+            <i class="fa-solid fa-user"></i>
+          <% end %>
+        </li>
+      </ul>
+
+      <div class="details">
+        <h2><%= user.first_name %>
+          <br>
+          <span class="job-title"><%= user.instrument %></span>
+        </h2>
+      </div>
+
     </div>
+  <% end %>
+  </div><!-- end box wrapper -->
+
 
     <div id= "map", style="width: 300px; height: 300px;"
   data-controller="map"
