@@ -24,6 +24,10 @@
     <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
+
+    <%= f.input :bio,
+                required: true %>
+
     <%= f.input :photo, as: :file %>
 
 

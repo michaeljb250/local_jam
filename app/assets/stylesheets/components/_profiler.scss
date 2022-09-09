@@ -1,63 +1,241 @@
-.nametitle {
-     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  font-size: 70px;
-  color: #d1743a;
-position: absolute;
- top: 230px;
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Paaji+2:wght@400;500&display=swap");
 
+.containerpr {
+  display: grid;
+  grid-template-columns: 300px 300px 300px;
+  grid-gap: 50px;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #fffdf0;
+  font-family: 'Baloo Paaji 2', cursive;
+   position: absolute;
+   left: 10px;
+   top: 50px;
 }
 
-.icon {
-  border-image: url(accoustic.png);
- position: absolute;
- top: 315px
-}
-
-.bio {
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-font-size: 28px;
-color: #5b3d2a;
- position: absolute;
- top: 430px;
-}
-
-.showimage {
- position: absolute;
- top: 115px;
- left: 150px;
- border-radius: 100px !important;
-border: 3px solid #d1743a;
-img{
-  border-radius: 100px !important;
-}
-}
-
-.followposition{
-  position: absolute;
-   top: 142px;
-  left: 430px;
-  font-size: 20px !important;
-  border: 7px solid #d1743a !important;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+.cardpr {
   background-color: #d1743a;
-  list-style-type: none;
-  border-radius: 45%;
-  -webkit-tap-highlight-color: transparent;
+  height: 37rem;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding-bottom: 10px;
 }
 
-.userbanner{
-  -webkit-filter: blur(5px);
-  -moz-filter: blur(5px);
-  -o-filter: blur(5px);
-  -ms-filter: blur(5px);
-  filter: blur(5px);
+.card__name {
+  margin-top: 15px;
+  font-size: 1.5em;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
 }
 
-.vidwrapper{
-  width: 100%; max-width: 500px;
+.card__image {
+  height: 160px;
+  width: 160px;
+  border-radius: 50%;
+  border: 5px solid #272133;
+  margin-top: 20px;
+  box-shadow: 0 10px 50px rgba(255,	253, 240, 1);
+   object-fit: contain;
+}
+
+
+.draw-border {
+  box-shadow: inset 0 0 0 4px #58cdd1;
+  color: #fffdf0;
+  -webkit-transition: color 0.25s 0.0833333333s;
+  transition: color 0.25s 0.0833333333s;
+  position: relative;
+}
+
+.draw-border::before,
+.draw-border::after {
+  border: 0 solid transparent;
+  box-sizing: border-box;
+  content: '';
+  pointer-events: none;
+  position: absolute;
+  width: 0rem;
+  height: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.draw-border::before {
+  border-bottom-width: 4px;
+  border-left-width: 4px;
+}
+
+.draw-border::after {
+  border-top-width: 4px;
+  border-right-width: 4px;
+}
+
+.draw-border:hover {
+  color: #ffe593;
+}
+
+.draw-border:hover::before,
+.draw-border:hover::after {
+  border-color: #fffdf0;
+  -webkit-transition: border-color 0s, width 0.25s, height 0.25s;
+  transition: border-color 0s, width 0.25s, height 0.25s;
+  width: 100%;
+  height: 100%;
+}
+.draw-border:hover::before{
+  border-color: #fffdf0;
+}
+.draw-border:hover::before {
+  -webkit-transition-delay: 0s, 0s, 0.25s;
+  transition-delay: 0s, 0s, 0.25s;
+}
+
+.draw-border:hover::after {
+  -webkit-transition-delay: 0s, 0.25s, 0s;
+  transition-delay: 0s, 0.25s, 0s;
+}
+
+.btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  line-height: 1.5;
+  font: 700 1.2rem 'Roboto Slab', sans-serif;
+  padding: 0.75em 2em;
+  letter-spacing: 0.05rem;
+  margin: 1em;
+  width: 13rem;
 
 }
-.vidcontainer{
-max-width: 100%; height: 0%;
 
+.btn:focus {
+  outline: 2px dotted #55d7dc;
+}
+
+
+.social-icons {
+  padding: 0;
+  list-style: none;
+  margin: 1em;
+}
+
+.social-icons li {
+  display: inline-block;
+  margin: 0.15em;
+  position: relative;
+  font-size: 1em;
+}
+
+.social-icons i {
+  color: #fff;
+  position: absolute;
+  top: 0.95em;
+  left: 0.96em;
+  transition: all 265ms ease-out;
+}
+
+.social-icons a {
+  display: inline-block;
+}
+
+.social-icons a:before {
+  transform: scale(1);
+  -ms-transform: scale(1);
+  -webkit-transform: scale(1);
+  content: " ";
+  width: 45px;
+  height: 45px;
+  border-radius: 100%;
+  display: block;
+  background: linear-gradient(45deg, #ff003c, #c648c8);
+  transition: all 265ms ease-out;
+}
+
+.social-icons a:hover:before {
+  transform: scale(0);
+  transition: all 265ms ease-in;
+}
+
+.social-icons a:hover i {
+  transform: scale(2.2);
+  -ms-transform: scale(2.2);
+  -webkit-transform: scale(2.2);
+  color: #ff003c;
+  background: -webkit-linear-gradient(45deg, #ff003c, #c648c8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 265ms ease-in;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  font-size: 1.2em;
+}
+
+.followbutton{
+  text-decoration: none;
+}
+
+.fancy {
+  padding : 1em;
+  width: 400px;
+  height:585px;
+  border-radius: 5px;
+  box-sizing: border-box;
+ position: absolute;
+ top: 73px;
+ left: 300px;
+  /* At the bottom of our background stack,
+     let's have a misty grey solid color */
+  background-color: #fffdf0;
+
+  /* We stack linear gradients on top of each
+     other to create our color strip effect.
+     As you will notice, color gradients are
+     considered to be images and can be
+     manipulated as such */
+  background-image: linear-gradient(175deg, rgba(0,0,0,0) 95%, #FFFDF0ff 95%),
+                    linear-gradient( 85deg, rgba(0,0,0,0) 95%, #FBF1DFff 95%),
+                    linear-gradient(175deg, rgba(0,0,0,0) 90%, #F7E4CFff 90%),
+                    linear-gradient( 85deg, rgba(0,0,0,0) 92%, #F2D8BEff 92%),
+                    linear-gradient(175deg, rgba(0,0,0,0) 85%, #EECBAEff 85%),
+                    linear-gradient( 85deg, rgba(0,0,0,0) 89%, #EABF9Dff 89%),
+                    linear-gradient(175deg, rgba(0,0,0,0) 80%, #E6B28Dff 80%),
+                    linear-gradient( 85deg, rgba(0,0,0,0) 86%, #E2A67Cff 86%),
+                    linear-gradient(175deg, rgba(0,0,0,0) 75%, #DE996Cff 75%),
+                    linear-gradient( 85deg, rgba(0,0,0,0) 83%, #D98D5Bff 83%),
+                    linear-gradient(175deg, rgba(0,0,0,0) 70%, #D5804Bff 70%),
+                    linear-gradient( 85deg, rgba(0,0,0,0) 80%, #D1743Aff 80%);
+}
+
+// .fancy p{
+//   font-size
+// }
+
+#biotext{
+  width: 300px;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
+  color: #d1743a;
+
+}
+
+.iframe-container{
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding-bottom: 56.25%;
+  height: 0;
+}
+.iframe-container iframe{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
