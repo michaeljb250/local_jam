@@ -1,10 +1,10 @@
-<h1>Groups#index</h1>
-<p>Find me in app/views/groups/index.html.erb</p>
+<h1 class="connecto">These are all your groups!</h1><br>
+<br>
 <% @groups.each do |group| %>
 <ul>
-<li><%= group.name %>
-<%= link_to group.name, group_path(group) %>
+<li class="connector"><%= group.name %> </li>
+<%= link_to "Enter", group_path(group), class: "connectoror" %>
 </li>
 </ul>
 <% end %>
-<%= link_to "Create New", new_group_path %>
+<%= link_to "Create a new Group!", new_group_path, class: "newone"  %>
