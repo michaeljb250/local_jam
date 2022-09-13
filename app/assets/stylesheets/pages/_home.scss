@@ -33,14 +33,14 @@ body {
 }
 
 .container1 {
-	width: 75vw;
+	width: 100vw;
 	margin: 0 auto;
 }
 
 .card1 {
 	width: 60%;
 	height: 200px;
-	margin: 30vh auto;
+	margin: 3vh auto;
 	padding: 2rem 0;
 	box-shadow: 4px 4px 1rem hsla(0,0%,0%, .2);
 	position: relative;
@@ -49,12 +49,12 @@ body {
 .blender {
 	width: 100%;
 	height: 100%;
-	background-color: #fff;
+	background-color: #f5a16c;
 	position: absolute;
 	top: 0%;
 	right: 0;
 	z-index: 1;
-	animation: blenderShrink 4s infinite alternate both ease-in-out;
+	animation: blenderShrink 2s infinite alternate both ease-in-out;
 }
 
 .card1 h5 {
@@ -88,4 +88,38 @@ body {
 	margin-top: -10vh;
 	color: #757575;
 	font-weight: 600;
+}
+
+
+
+.iframe-container{
+  position: absolute;
+  top:0px;
+  right:0px;
+  width: 100%;
+  padding-bottom: 56.25%;
+  height: 0;
+}
+.iframe-container iframe{
+  top:0px;
+  right:0px;
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hpsizer {
+  display: flex;
+  justify-content: center;
+}
+
+.hpsizing {
+  display: flex;
+  justify-content: center;
+}
+
+.hpsizer2 {
+  max-width: 700px;
 }
