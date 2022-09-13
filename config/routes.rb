@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
   resources :groups do
     resources :user_groups, only: [:create]
+    resources :messages, only: :create
   end
   resources :users do
     member do

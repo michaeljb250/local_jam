@@ -1,6 +1,20 @@
 class GroupsController < ApplicationController
   def index
     @groups = Group.all
+    if params[:query]
+      sql_query = "location ILIKE :query OR purpose ILIKE :query"
+     @groups = @groups.where(sql_query, query: "%#{params[:query]}%")
+    end
+    @markers = @groups.geocoded.map do |group|
+      rando = ["music-sheet-song.gif", "adancer.gif", "adanco.gif"]
+      {
+
+        lat: group.latitude,
+        lng: group.longitude,
+        info_window: render_to_string(partial: "info_window", locals: {group: group}),
+        image_url: helpers.asset_url(rando.sample)
+      }
+    end
   end
 
   def update
@@ -13,10 +27,14 @@ class GroupsController < ApplicationController
     @group = Group.find(params[:id])
     @user_group = UserGroup.new
     @users = @group.users
+    @message = Message.new
     @markers = @users.geocoded.map do |user|
+      rando = ["music-sheet-song.gif", "adancer.gif", "adanco.gif"]
       {
         lat: user.latitude,
-        lng: user.longitude
+        lng: user.longitude,
+        info_window: render_to_string(partial: "info_window2", locals: {user: user}),
+        image_url: helpers.asset_url(rando.sample)
       }
   end
 end
@@ -40,6 +58,6 @@ def create
 
   private
   def group_params
-    params.require(:group).permit(:name)
+    params.require(:group).permit(:name, :purpose, :location)
   end
 end

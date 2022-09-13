@@ -1,4 +1,9 @@
 
+ <%= link_to "leave review", new_user_review_path(@user) %>
+ <% @reviews.each do |review| %>
+    <%= review.content %>
+ <% end %>
+
  <div class="containerpr">
   <div class="cardpr">
     <%= cl_image_tag(@user.photo.key, :class => "card__image") %>
