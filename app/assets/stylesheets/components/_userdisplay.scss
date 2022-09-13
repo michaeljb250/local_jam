@@ -92,7 +92,7 @@ body {
       height: 50px;
       line-height: 50px;
       text-align: center;
-      background: #fff;
+      background-color: #d1743a;
       font-size: 23px;
       color: #fffdf0;
       font-weight: bold;
@@ -107,13 +107,15 @@ body {
 .card:hover .social-icons li a {
   transform: translateY(0px);
   opacity: 1;
+ background: #d1743a !important;
 }
 
+
 .social-icons li a:hover {
-  background: #000;
+  background: #d1743a;
   transition: .2s;
   .fab {
-    color: #fffdf0;
+    background: #d1743a;
   }
 }
 
@@ -122,7 +124,7 @@ body {
 
   &:hover {
       transform: rotateY(360deg);
-      color: #fffdf0;
+      background: #d1743a !important;
   }
 }
 
@@ -254,3 +256,16 @@ body {
    width: fit-content !important;
    height: fit-content !important;
   }
+
+  .social-icons a:before {
+    transform: scale(1);
+    -ms-transform: scale(1);
+    -webkit-transform: scale(1);
+    content: " ";
+    width: 45px;
+    height: 45px;
+    border-radius: 100%;
+    display: block;
+    background: linear-gradient(45deg, #000,#d1743a ) !important;
+    transition: all 265ms ease-out;
+}

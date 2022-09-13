@@ -1,7 +1,7 @@
 <li data-user=<%= user.id %>>
   <% if current_user.is_following?(user.id) %>
-    <%= link_to "Unfollow", unfollow_user_path(user.id), data: {turbo_method: :post }, class: "followbutton", remote: true %>
+    <%= link_to "Unfriend", unfollow_user_path(user.id), data: {turbo_method: :post }, class: "followbutton", remote: true %>
   <% else %>
-    <%= link_to "Follow", follow_user_path(user.id), data: {turbo_method: :post }, remote: true %>
+    <%= link_to " Add Friend", follow_user_path(user.id), data: {turbo_method: :post }, remote: true %>
   <% end %>
 </li>

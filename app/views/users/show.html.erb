@@ -1,128 +1,167 @@
 
- <%= link_to "leave review", new_user_review_path(@user) %>
- <% @reviews.each do |review| %>
-    <%= review.content %>
- <% end %>
 
- <div class="containerpr">
-  <div class="cardpr">
-    <%= cl_image_tag(@user.photo.key, :class => "card__image") %>
-    <p class="card__name"><%= @user.first_name %></p>
-    <div class="grid-container">
+ <%# <%= link_to "leave review", new_user_review_path(@user) %>
+ <%# <% @reviews.each do |review| %>
+    <%# <%= review.content %>
+ <%# <% end %>
 
-      <div class="grid-child-posts">
-        156 Post
-      </div>
 
-      <div class="grid-child-followers">
-        <%= @user.followers.count%>   followers
-      </div>
 
-    </div>
-    <ul class="social-icons">
-      <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-      <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-      <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-      <li><a href="#"><i class="fa fa-codepen"></i></a></li>
-    </ul>
-    <button class="btn draw-border"><%=render @user%></button>
-    <button class="btn draw-border">Message</button>
+<div class= "profilebackground">
 
-  </div>
-<div class="fancy"> <p id= "biotext"> <%= @user.bio %> </p>
+
+  <div class="container emp-profile">
+            <form method="post">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="profile-img">
+                             <%= cl_image_tag @user.photo.key %>
+                            <div class="file btn btn-lg btn-primary reviewbutton">
+                                 <%= link_to "leave review", new_user_review_path(@user) %>
+                                <%# <input type="file" name="file"/> %>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="profile-head">
+                                    <h5>
+                                        <%= @user.first_name %>
+                                    </h5>
+                                    <h6>
+                                        <%= @user.instrument %>
+                                    </h6>
+                                    <p class="proile-rating">friends : <span><%= @user.followers.count %></span></p>
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Jam clip</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="profile-work">
+
+
+
+                             <button type="button" class="btn btn-primary btn-color" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                               Friends
+                                </button>
+
+                                <button type="button" class="btn btn-primary btn-color" data-bs-toggle="modal" data-bs-target="#reviews">
+                               Reviews
+                                </button>
+                              <button class="btn draw-boarder btnfollow"><%=render @user%></button>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="tab-content profile-tab" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                        <%# <div class="row"> %>
+                                            <%# <div class="col-md-6"> %>
+                                                <label class="biotitle">Bio:</label>
+                                                  <p class ="bioparagraph"> <%= @user.bio %></p>
+                                           <%# </div> %>
+                                        <%# </div> %>
+                            </div>
+                            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                              <div>
+                                               <%# <%= @user.video.html_safe%>
+                                              </div>
+                                        </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
 </div>
-</div>
-
->
-   <div id ="youtubevideo">
-  <%=@user.video.html_safe%></div>
-
-
-
-
 
 
 
 
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-  Launch static backdrop modal
-</button>
+
 
 <!-- Modal -->
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-scrollable">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+        <h5 class="modal-title" id="staticBackdropLabel">Friends</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
          <% @user.followers.each do |user| %>
-         <div class="containerfollow">
-
-            <div class="card p-3">
-
-                <div class="d-flex align-items-center">
-
-                    <div class="image">
-                 <%= cl_image_tag user.photo.key%>
-                </div>
-
-                <div class="ml-3 w-100">
-
-                   <h4 class="mb-0 mt-0"><%=user.first_name %></h4>
-                   <span> <%=user.instrument %></span>
-
-                   <div class="p-2 mt-2 bg-primary d-flex justify-content-between rounded text-white stats">
-
-                    <div class="d-flex flex-column">
-
-                        <span class="articles">Articles</span>
-                        <span class="number1">38</span>
-
-                    </div>
-
-                    <div class="d-flex flex-column">
-
-                        <span class="followers">Followers</span>
-                        <span class="number2">980</span>
-
-                    </div>
-
-
-                    <div class="d-flex flex-column">
-
-                        <span class="rating"> <%  %></span>
-                        <span class="number3">8.9</span>
-
-                    </div>
-
-                   </div>
-
-
-                   <div class="button mt-2 d-flex flex-row align-items-center">
-
-                    <button class="btn btn-sm btn-outline-primary w-100">Chat</button>
-                    <button class="btn btn-sm btn-primary w-100 ml-2">Follow</button>
-
-
-                   </div>
-
-
-                </div>
-
-
-                </div>
-
-            </div>
+         <div class="container">
+  <div class="row">
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="our-team">
+        <div class="picture">
+        <%= cl_image_tag user.photo.key%>
+        </div>
+        <div class="team-content">
+          <h3 class="name"><%= user.first_name %></h3>
+          <h4 class="title"><%=user.instrument %></h4>
+        </div>
+        <ul class="social">
+          Followers <%= user.followers.count %>
+      </div>
+    </div>
             <% end %>
          </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Understood</button>
       </div>
     </div>
   </div>
+</div>
+</div>
+</div>
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+</div>
+<!-- Modal 2 -->
+ <div class="bodywed"></div>
+ <div class="modal fade" id="reviews" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="false">
+  <div class="modal-dialog  modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Reviews</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+         <% @reviews.each do |review| %>
+         <section class="rating__card">
+  <blockquote class="rating__card__quote"><%=review.content%></blockquote>
+
+  <p class="rating__card__bottomText"><%=review.reviewer.first_name %></p>
+</section>
+            <% end %>
+         </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+ </div>
 </div>
