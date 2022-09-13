@@ -1,0 +1,28 @@
+.gmdisplay {
+  display: flex;
+// justify-content: space-between;
+margin-top: 5%;
+margin-right: 20%;
+background-color: white;
+}
+.gmlefter {
+  display: flex;
+  flex-direction: column;
+// justify-content:right;
+}
+
+
+.gmdisplayer {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 100px;
+}
+
+.gmwidther {
+  width: 42%;
+}
+
+.gmbtnalign {
+  // display: flex;
+  // justify-content: left;
+}

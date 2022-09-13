@@ -12,6 +12,7 @@ class User < ApplicationRecord
   has_many :reviewees, foreign_key: :reviewee_id, class_name: 'Review'
   has_many :reviews
   has_many :follows
+  has_many :messages
   has_many :user_groups
   has_many :groups, through: :user_groups
   validates :first_name, presence: true

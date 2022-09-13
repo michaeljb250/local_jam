@@ -1,0 +1,30 @@
+.gibtnindexer {
+  width: 35%;
+}
+
+.gicont {
+display: flex;
+}
+
+.giconter {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 8px;
+// gap: 10px;
+  }
+
+.groups_card {
+ height: 200px;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ border-style:solid;
+ border-color:coral;
+ flex-direction: column;
+ justify-content: space-evenly;
+}
+
+.groups_column {
+  display: flex;
+flex-direction: column;
+}
