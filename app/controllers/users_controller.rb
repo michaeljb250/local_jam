@@ -51,5 +51,5 @@ def profile
 end
 
 def user_params
-  params.require(:user).permit(:email, :photo)
+  params.require(:user).permit(:email,:photo, :video)
 end

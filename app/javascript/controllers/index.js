@@ -12,3 +12,6 @@ application.register("logo-animation", LogoAnimationController)
 
 import MapController from "./map_controller"
 application.register("map", MapController)
+
+import UserprofileController from "./userprofile_controller"
+application.register("userprofile", UserprofileController)
