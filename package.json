@@ -8,6 +8,7 @@
     "@mapbox/mapbox-gl-geocoder": "^5.0.1",
     "@popperjs/core": "^2.11.6",
     "bootstrap": "^5.2.0",
+    "jquery": "^3.6.1",
     "mapbox-gl": "^2.10.0",
     "tone": "^14.7.77",
     "webpack": "^5.74.0",
