@@ -1,5 +1,5 @@
   <h1 class="connecto">These are all your groups!</h1>
-  <%= link_to "Create a new Group!", new_group_path, class: "newone"  %><br>
+  <%= link_to "Create a new Group!", new_group_path, class: "newone" %><br>
   <br>
   <div class="search-bar" style="width: 900px;" >
   <%= form_with url: groups_path, method: :get, class: "d-flex align-items-center" do |form| %>
@@ -17,7 +17,7 @@
   data-map-markers-value="<%= @markers.to_json %>"
   data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
   </div>
-  <div class="giconter", class="connector">
+  <div class="giconter" class="connector">
   <% @groups.each do |group| %>
   <div class="connector groups_card">
     <%= link_to group.name, group_path(group), class: "connector" %>

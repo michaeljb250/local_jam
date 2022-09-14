@@ -1,4 +1,4 @@
-<div class ="gibtnindexer">
+<div class ="gibtnindexer" data-controller="logo-animation" id="soundpopper">
 <h1 class="connector">Your new Group</h1>
 <p class="newone">Could you guys be the next Coldplay!? Hopefully not.</p>
 <%= simple_form_for @group do |f| %>
@@ -9,5 +9,5 @@
   <%= f.button :button, "Cancel", type: "reset", class: "connectoror" %>
 <% end %><br>
 <br>
-<%= link_to "Back to groups", groups_path, class: "connectoror"  %>
+<%= link_to "Back to groups", groups_path, class: "connectoror"%>
 </div>
