@@ -1,51 +1,47 @@
-
-<div class="banner" >
+<div class="banner">
   <a href="https://www.traidcraftshop.co.uk/food/store-cupboard/jams-spreads">
     <div class="plus-slideshow">
       <div class="product-1"></div>
       <div class="product-2"></div>
     </div>
   </a>
-  </div>
 </div>
-  <span class =" boxbox position-relative">
-<div class="box">
+<span class="boxbox position-relative">
+  <div class="box">
     <%= form_with url: users_path, method: :get, class: "d-flex align-items-center" do |form| %>
-        <input type="text" class="input" name="txt" onmouseout="this.value = ''; this.blur();">
-        <i class="fas fa-search"></i>
-        <%end %>
-
-</div>
+      <input type="text" class="input" name="txt" onmouseout="this.value = ''; this.blur();">
+      <i class="fas fa-search"></i>
+    <%end %>
+  </div>
 </span>
-  <div class="card-wrapper">
-  <% @users.each do |user|  %>
-<div class="hpsizing">
-  <div id= "map", style="width: 1450px; height: 350px;"
+<div id= "map", style="width: 1450px; height: 350px;"
   data-controller="map"
   data-map-markers-value="<%= @markers.to_json %>"
   data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-  </div>
-    <div class="card">
-
-      <div class="card-image">
-        <%= cl_image_tag user.photo.key%>
+</div>
+<div class="card-wrapper">
+  <% 10.times do %>
+    <% @users.each do |user|  %>
+      <div class="hpsizing">
+        <div class="card">
+          <div class="card-image">
+            <%= cl_image_tag user.photo.key%>
+          </div>
+          <ul class="social-icons">
+            <li>
+              <%= link_to user_path(user) do %>
+                <i class="fa-solid fa-user"></i>
+              <% end %>
+            </li>
+          </ul>
+          <div class="details">
+            <h2 class="connectororino"><%= user.first_name %>
+              <br>
+              <span class="job-title"><%= user.instrument %></span>
+            </h2>
+          </div>
+        </div>
       </div>
-
-      <ul class="social-icons">
-        <li>
-           <%=   link_to user_path(user) do %>
-            <i class="fa-solid fa-user"></i>
-          <% end %>
-        </li>
-      </ul>
-
-      <div class="details">
-        <h2 class="connectororino"><%= user.first_name %>
-          <br>
-          <span class="job-title"><%= user.instrument %></span>
-        </h2>
-      </div>
-
-    </div>
+    <% end %>
   <% end %>
-  </div><!-- end box wrapper -->
+</div><!-- end box wrapper -->
