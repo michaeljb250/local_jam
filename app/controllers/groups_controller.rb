@@ -33,7 +33,7 @@ class GroupsController < ApplicationController
       {
         lat: user.latitude,
         lng: user.longitude,
-        info_window: render_to_string(partial: "info_window2", locals: {user: user}),
+        info_window: render_to_string(partial: "info_window", locals: {group: @group}),
         image_url: helpers.asset_url(rando.sample)
       }
   end
