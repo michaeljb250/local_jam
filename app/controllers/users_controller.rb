@@ -9,9 +9,12 @@ class UsersController < ApplicationController
     end
   # The `geocoded` scope filters only flats with coordinates
   @markers = @users.geocoded.map do |user|
+    rando = ["music-sheet-song.gif", "adancer.gif", "adanco.gif"]
     {
       lat: user.latitude,
-      lng: user.longitude
+      lng: user.longitude,
+      info_window: render_to_string(partial: "info_window2", locals: {user: user}),
+        image_url: helpers.asset_url(rando.sample)
     }
   end
   end
