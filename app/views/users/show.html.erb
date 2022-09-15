@@ -9,11 +9,13 @@
 </div>
 <div class="userprofilerbanner"></div>
 <div class=buttoncolumn>
-  <div class="file btn btn-lg btn-primary reviewbutton">
-    <%= link_to "leave review", new_user_review_path(@user) %>
+  <button class="btn draw-boarder reviewbutton"><%=render @user%></button>
+  <div class="file btn btn-lg btn-primary btnfollow">
+    <%= link_to "leave review", new_user_review_path(@user), class: "text-decoration-none" %>
     <%# <input type="file" name="file"/> %>
   </div>
-  <button class="btn draw-boarder btnfollow"><%=render @user%></button>
+
+  <%= link_to "create group !", new_group_path, class: "newgroupbtn" %>
 </div>
 <div class= "profilebackground">
   <div class="container emp-profile">

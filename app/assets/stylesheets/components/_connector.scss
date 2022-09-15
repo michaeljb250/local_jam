@@ -19,8 +19,10 @@
   font-size: 20px;
   color: #d1743a;
 // position: absolute;
-//  top: 230px;
-//  display: flex;
+top: 230px;
+display: flex;
+
+
 }
 
 .connectororino {
@@ -82,3 +84,47 @@
   font-size: 12px;
   margin: 0;
 }
+.backbutton{
+
+
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 17px;
+  color: #fffdf0 !important;
+// position: absolute;
+top: 230px;
+display: flex;
+  border: 3px solid #d1743a;
+  border-radius: 10px;
+  width: fit-content;
+  white-space: nowrap;
+  background: #d1743a;
+  padding: 5px;
+  text-decoration: none !important;
+}
+
+.backbutton:hover{
+  background: #fffdf0;
+  color: #d1743a !important;
+  transition: 0.2s;
+}
+
+.backbuttons{
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 17px;
+    color: #fffdf0 !important;
+    top: 230px;
+    display: flex;
+    border: 3px solid #d1743a;
+    border-radius: 10px;
+     left: -20px;
+    width: 80px;
+    white-space: nowrap;
+    background: #d1743a !important;
+    padding: 1px !important;
+    text-decoration: none !important;
+    position: relative;
+    top: 0px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+                          }

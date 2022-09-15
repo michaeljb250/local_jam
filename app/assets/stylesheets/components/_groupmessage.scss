@@ -5,7 +5,7 @@ margin-top: 5%;
 margin-right: 20%;
 background-color: white;
 border: 4px outset #d1743a; ;
-width: 500px;
+width: 600px;
 height: 400px;
 overflow-x: hidden;
 overflow-y: auto;
@@ -32,4 +32,22 @@ text-align:justify;
 .gmbtnalign {
   // display: flex;
   // justify-content: left;
+}
+.groupscards{
+   width: fit-content;
+   height: fit-content;
+  border:5px solid #d1743a;
+  padding: 20px;
+}
+
+.avcolumn{
+  position: relative;
+  left: -30px;
+  display: flex;
+  flex-direction: column;
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  object-fit: cover;
+  margin-bottom: 15px;
 }
