@@ -1,45 +1,11 @@
 <div class="artist_namo">
-<h1 class="connecto">Leave a review!</h1><br>
-<br>
+<div class="artist_namomo">
+<h1 class="connector">Leave a review</h1>
 <div class="gmwidther">
 <%= simple_form_for [@user, @review] do |f| %>
     <%= f.input :content %>
-    <%= f.button :submit, class: "connectoror"%>
+    <%= f.button :submit %>
 <% end %>
 </div>
 </div>
-<div>
-<button type="button" class="btn btn-primary btn-color" data-bs-toggle="modal" data-bs-target="#reviews">
-Reviews
- </button>
 </div>
-<div class="bodywed" style=></div>
- <div class="modal fade" id="reviews" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="false">
-  <div class="modal-dialog  modal-dialog-scrollable">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Reviews</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-         <% @reviews.each do |review| %>
-         <section class="rating__card">
-  <blockquote class="rating__card__quote"><%=review.content%></blockquote>
-
-  <p class="rating__card__bottomText"><%=review.reviewer.first_name %></p>
-</section>
-            <% end %>
-         </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
- </div>
-</div>
-
-<div class="cards">
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-  <%=  %>
-  </div>

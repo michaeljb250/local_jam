@@ -233,7 +233,7 @@ body {
 .plus-slideshow > div {
   height: 200px;
   width: 2900px;
-  background: url("bnerororo.png");
+  background: url("bnerofinal.png");
   position: absolute;
   top: 0;
   left: 0;
@@ -267,12 +267,24 @@ body {
 }
 
 .artist_namo{
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: center;
-  margin-left: 50px;
+//  display: flex;
+//  flex-direction: column;
+ margin-left: 400px;
+ max-width: 600px;
+ margin-top: 150px;
+ border-style: solid;
+ border-width: 12px;
+ border-color: #d1743a;
+ background-color: #FFFDF0;
+
 }
+
+.artist_namomo {
+display: flex;
+justify-content: center;
+margin-right: 20px;
+}
+
 
 .search-bar {
    input{
