@@ -1,14 +1,17 @@
 <div class="gmdisplayer">
 <div class="gmlefter">
+<div class ="groupscards">
 <h1 class="connector"><%= @group.name %> </h1>
 <h1 class="connectoror"><%= @group.purpose %> </h1><br>
 <br>
 <p class="connectoror">Other members</p>
 <ul>
 <% @group.users.each do |user|%>
-<li class="connectoror"> <%= user.first_name.capitalize%>, player of the <%= user.instrument.capitalize %>
-<%= link_to "Click for #{user.first_name.capitalize}'s profile", user_path(user), class: "connectororor" %>
+ <div>
+<%=link_to user_path(user) do%>
+   <%= cl_image_tag user.photo.key, class: "avcolumn"%>
   </li>
+   <% end %>
 <% end %>
 </ul>
 <div class="gmwidther">
@@ -17,7 +20,8 @@
 <%= f.button :submit, "Add User", class: "connectororino"%>
 <% end %>
 </div>
-<%= link_to "see other groups", groups_path, class: "connectoror"  %>
+<%= link_to "see other groups", groups_path, class: "backbutton"  %>
+</div>
 </div>
 <div>
 <%# <div class="gmdisplayer"> %>
@@ -60,7 +64,7 @@
   <%= f.input :content,
     label: false,
     placeholder: "Message #{@group.name}",
-    wrapper_html: {class: "flex-grow-1"}
+    wrapper_html: {class: "flex-grow-1"}, class: "searchbut"
   %>
-  <%= f.submit "Send", class: "btn btn-primary mb-3" %>
+  <%= f.submit "Send", class: "backbuttons" %>
 <% end %>
