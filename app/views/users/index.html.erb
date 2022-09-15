@@ -1,7 +1,11 @@
 
 <div class="banner" >
-  <div class="banner">
+  <a href="https://www.traidcraftshop.co.uk/food/store-cupboard/jams-spreads">
+    <div class="plus-slideshow">
+      <div class="product-1"></div>
+      <div class="product-2"></div>
     </div>
+  </a>
   </div>
 </div>
   <span class =" boxbox position-relative">
@@ -15,7 +19,12 @@
 </span>
   <div class="card-wrapper">
   <% @users.each do |user|  %>
-
+<div class="hpsizing">
+  <div id= "map", style="width: 1450px; height: 350px;"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+  </div>
     <div class="card">
 
       <div class="card-image">
@@ -31,7 +40,7 @@
       </ul>
 
       <div class="details">
-        <h2><%= user.first_name %>
+        <h2 class="connectororino"><%= user.first_name %>
           <br>
           <span class="job-title"><%= user.instrument %></span>
         </h2>
@@ -40,9 +49,3 @@
     </div>
   <% end %>
   </div><!-- end box wrapper -->
-
-
-    <div id= "map", style="width: 300px; height: 300px;"
-  data-controller="map"
-  data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>

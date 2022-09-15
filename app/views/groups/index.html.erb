@@ -12,7 +12,7 @@
   <% end %>
 </div>
  <div class="hpsizing">
-  <div id= "map", style="width: 1450px; height: 350px;"
+  <div id= "map", style="width: 100%; height: 350px;"
   data-controller="map"
   data-map-markers-value="<%= @markers.to_json %>"
   data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
@@ -22,7 +22,7 @@
   <div class="connector groups_card">
     <%= link_to group.name, group_path(group), class: "connector" %>
     <div class="newone">
-  <%= group.purpose %>, in <%= group.location %>
+  <%= group.purpose %> in <%= group.location %>
   </div>
   </div>
   <% end %>

@@ -45,6 +45,7 @@ body {
   box-shadow: 0 5px 18px rgba(0, 0, 0, 0.6);
   cursor: pointer;
   margin: 16px;
+  left: 85px;
 
   .card-image {
     position: absolute;
@@ -199,18 +200,19 @@ body {
 
 
 .banner {
-  background-image: url(band.jpeg);
+  // background-image: url(band.jpeg);
   background-size: contain;
   background-position: center;
-  padding: 60px 0;
+  padding: 30px 0;
   color: rgb(219, 90, 9);
-  background-color: red;
+  // background: url(https://moen.widen.net/content/jas4p503qr/jpeg/animated-background.jpeg?position=c&color=ffffffff&quality=100&u=yuubbq);
+  background-color:#FFFDF0;
 }
 
 #bannerhead {
  position: absolute;
 
-  top: 55px;
+  top: 2px;
   margin: 0;
   color: (209, 116, 58);
   text-shadow: 1px 1px 3px rgba(209, 116, 58, 0.837);
@@ -218,10 +220,58 @@ body {
   font-weight: bold;
 }
 
+.plus-slideshow {
+  height: 95px;
+  max-width: 2900px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
+  top: 1px;
+}
+
+.plus-slideshow > div {
+  height: 200px;
+  width: 2900px;
+  background: url("bnerororo.png");
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  transform: translate3d(0, 0, 0);
+}
+.plus-slideshow .product-1 {
+  animation: moveSlideshow 12s linear infinite;
+}
+.plus-slideshow .product-2 {
+  opacity: 0;
+  transition: opacity 0.9s ease-out;
+  background-position: 0 -200px;
+  animation: moveSlideshow 12s linear infinite;
+}
+.plus-slideshow:hover .product-2 {
+  opacity: 0;
+}
+
+@keyframes moveSlideshow {
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+
 .artist_name{
   position:absolute ;
   top: 0px;
   right: 3px;
+}
+
+.artist_namo{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 50px;
 }
 
 .search-bar {
