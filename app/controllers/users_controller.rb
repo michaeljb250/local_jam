@@ -3,9 +3,9 @@ class UsersController < ApplicationController
 
   def index
     @users = User.where.not(id: current_user.id)
-    if params[:query]
-       sql_query = "instrument ILIKE :query OR first_name ILIKE :query"
-      @users = @users.where(sql_query, query: "%#{params[:query]}%")
+    if params[:txt]
+       sql_query = "instrument ILIKE :txt OR first_name ILIKE :txt"
+      @users = @users.where(sql_query, txt: "%#{params[:txt]}%")
     end
   # The `geocoded` scope filters only flats with coordinates
   @markers = @users.geocoded.map do |user|

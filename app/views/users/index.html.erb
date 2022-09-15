@@ -4,17 +4,16 @@
     </div>
   </div>
 </div>
-<div class="search-bar" style="width: 900px;" >
-  <%= form_with url: users_path, method: :get, class: "d-flex align-items-center" do |form| %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Find a jammer"
-    %>
-    <%= submit_tag "Search", class: "btn btn-primary" %>
-  <% end %>
+  <span class =" boxbox position-relative">
+<div class="box">
+    <%= form_with url: users_path, method: :get, class: "d-flex align-items-center" do |form| %>
+        <input type="text" class="input" name="txt" onmouseout="this.value = ''; this.blur();">
+        <i class="fas fa-search"></i>
+        <%end %>
+
 </div>
-  <div class="card-wrapper" data-controller="logo-animation" id="soundpopper">
+</span>
+  <div class="card-wrapper">
   <% @users.each do |user|  %>
 
     <div class="card">
