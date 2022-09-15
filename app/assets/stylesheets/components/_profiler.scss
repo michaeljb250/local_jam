@@ -235,22 +235,19 @@ $df-bg-gray: #EFF0F2;
 
 }
 
-.iframe-container{
-  position: absolute;
-  top: 0;
-  width: 100%;
-  padding-bottom: 56.25%;
-  height: 0;
+#ytbvidpos iframe {
+  // position: relative;
+  // width: 100%;
+  // padding-bottom: 56.25%;
+  // height: 0;
+  width: 490px!important;
+  height: 290px!important;
 }
-.iframe-container iframe{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-
+// .iframe-container iframe{
+//   position: absolute;
+//   top:0;
+//   left: 0;
+// }
 
 .emp-profile{
   padding: 3%;
@@ -258,18 +255,22 @@ $df-bg-gray: #EFF0F2;
   margin-bottom: 3%;
   border-radius: 0.5rem;
   background: #fffdf0;
-  border: outset 5px  #d1743a;
-   color: #d1743a;
+
  }
 .profile-img{
   text-align: center;
 }
 .profile-img img{
-  width: 188.04px;
-  height: 235.24px;
-  position: relative;
-
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
+  object-fit: cover;
+  object-position: center;
+  position: absolute;
+    border-radius: 100%;
     object-fit: cover;
+    top: 65px;
+    left: 500px;
   }
 .profile-img .file {
   position: relative;
@@ -287,10 +288,19 @@ $df-bg-gray: #EFF0F2;
   right: 0;
   top: 0;
 }
-.profile-head h5{
+
+ .profile-head h5{
+  position: absolute;
+  top: 230px;
+  left: 168px;
+ }
+.profile-head h6{
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   font-size: 40px;
   color: #d1743a;
+  position: absolute;
+  top: 250px;
+  left: 135px;
 }
 .profile-head h6{
   color: #d1743a;
@@ -473,19 +483,60 @@ $df-bg-gray: #EFF0F2;
   color: #d1743a;
   background-color: #f7f5ec;
 }
-.biotitle{
- font-size: 20px;
+.biotitles{
+ font-size: 30px;
  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
  color: #d1743a;
  position: absolute;
- top: -80px;
+ top: 300px;
+ left: -450px;
+}
+
+.bioparagraph p{
+ color: #d1743a;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 17px;
+  margin: auto 0;
 }
 
 .bioparagraph{
   position: absolute;
- top: -50px;
+ height: 300px;
+ width: 500px ;
+  top: 350px;
+ left: -510px;
+ border:5px solid #d1743a;
+ overflow-x: hidden;
+overflow-y: auto;
 }
 
+.reviewcontainer{
+  position: absolute;
+ height: 300px !important;
+ width: 500px !important ;
+  top: 740px;
+ right: 200px;
+ border:5px solid #d1743a;
+ overflow-x: hidden;
+overflow-y: auto;
+}
+
+.followercontainer{
+  position: absolute;
+ height: 300px;
+ width: 500px ;
+  top: 740px;
+ right: -700px;
+ border:5px solid #d1743a;
+ overflow-x: hidden;
+overflow-y: auto;
+}
+
+
+.bioparagraph h1{
+  color: #d1743a;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
 .reviewbutton{
   position: relative;
    width: 188.24px !important;
@@ -511,7 +562,7 @@ $df-bg-gray: #EFF0F2;
   box-sizing: border-box;
   padding: 30px;
   font-family: sans-serif;
-  color: #545454;
+  color: #d1743a;
   font-weight: 100;
   background: url('') no-repeat center center;
   border-radius: 10px;
@@ -519,7 +570,11 @@ $df-bg-gray: #EFF0F2;
   background-size: cover;
   background: $df-bg-gray;
   width: 100%;
-  max-width: 600px;
+  max-width: 450px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+   margin-left: 15px;
+  background-color: #d1743a;
 }
 .rating__card__quote {
   padding: 30px 0;
@@ -528,6 +583,8 @@ $df-bg-gray: #EFF0F2;
   line-height: 1.2;
   font-size: 20px;
   line-height: 1.54;
+  color: #fffdf0;
+ font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 .fa-star {
   color: #545454;
@@ -543,14 +600,83 @@ $df-bg-gray: #EFF0F2;
 .rating__card__stars__name {
   font-size: 16px;
   margin: 0 0 0 5px;
+  color: #fffdf0;
 }
 .rating__card__bottomText {
   margin: 30px auto 15px;
   text-align: center;
   font-size: 14px;
+  color: #fffdf0 !important;
 }
 
 .btnfollow{
   border: 5px solid #d1743a  ;
   background-color: #d1743a;
 }
+
+
+
+.userprofilerbanner{
+  background-color: #d1743a;
+  position: absolute;
+  width: 1425px;
+   height: 200px;
+   top: 70px;
+}
+
+.userfollowcount{
+  position: absolute !important;
+  top: 300px;
+  left: 170px !important;
+
+}
+
+#followtitle{
+  position: absolute !important;
+  top: 419px;
+  left: 550px !important;
+  white-space: nowrap;
+  color: #d1743a
+}
+
+#friendlist{
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+   color: #d1743a;
+    font-size: 30px;
+    position: absolute;
+    top: 388px;
+    left: 345px;
+    white-space: nowrap;
+  }
+
+  .reviewtitle{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+   color: #d1743a;
+    font-size: 30px;
+    position: absolute;
+    top: 810px;
+
+    white-space: nowrap;
+  }
+
+  #ytbvidpos{
+    position: absolute;
+  top:460px;
+  left: 900px;
+  //  width: fit-content;
+  //    height: fit-content;
+  width: 500px!important;
+  height: 300px!important;
+
+  border:5px solid #d1743a;
+}
+
+.buttoncolumn{
+  position: absolute;
+  top: 600px;
+  left: 600px;
+   width: 230px;
+   height: 500px;
+   background-color: #d1743a;
+   border-radius: 10px ;
+  }
